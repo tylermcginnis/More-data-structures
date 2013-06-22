@@ -23,6 +23,11 @@ var makeLimitedArray = function(limit){
     checkLimit(index);
     storage[index] = value;
   };
+  limitedArray.each = function(callback){
+    for(var i = 0; i < storage.length; i++){
+      callback(storage[i], i, storage);
+    }
+  };
 
   var checkLimit = function(index){
     if(typeof index !== 'number'){ throw new Error('setter requires a numeric index for its first argument'); }

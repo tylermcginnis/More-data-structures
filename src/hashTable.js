@@ -7,6 +7,8 @@ var HashTable = function(){
   //   limitedArray.set(3, 'hi');
   //   limitedArray.get(3); // alerts 'hi'
   //
+  // There's also a '.each' method that you might find
+  // handy once you're working on resizing
   this._storage = makeLimitedArray(this._limit);
 };
 
