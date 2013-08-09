@@ -24,8 +24,14 @@ describe("tree", function() {
 
   it("should return true if the passed in value exists", function() {
     tree.addChild("first");
-    expect(tree.contains("first")).toBe(true);
+    expect(tree.contains("first")).toEqual(true);
   });
+
+  it("should return false if the passed in value does not exist", function() {
+    tree.addChild("first");
+    expect(tree.contains("second")).toEqual(false);
+  });
+
 
   // Add more tests here to test the functionality of tree.
   /*it("should'", function() {
