@@ -69,4 +69,24 @@ describe("linkedList", function() {
     expect(linkedList.contains(2)).toEqual(false);
   });
 
+  it("should return true if list contains passed value", function(){
+    linkedList.addToTail(1);
+    expect(linkedList.contains(1)).toEqual(true);
+  });
+
+  it("should return true if list with multiple values contains passed value", function(){
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    expect(linkedList.contains(2)).toEqual(true);
+  });
+
+  it("should return false if list with multiple values does not contain passed value", function(){
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    expect(linkedList.contains(4)).toEqual(false);
+  });
+
+
 });
