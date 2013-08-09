@@ -15,5 +15,12 @@ treeMethods.addChild = function(val){
   this.children.push(child);
 };
 
-treeMethods.contains = function(){
+treeMethods.contains = function(val){
+  var found = false;
+  _.each(this.children, function(child){
+    if(child.value === val){
+      found = true;
+    }
+  });
+  return found;
 };
