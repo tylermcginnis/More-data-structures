@@ -60,4 +60,13 @@ describe("linkedList", function() {
     expect(linkedList.tail).toEqual(null);
   })
 
+  it("should return false if head is null", function(){
+    expect(linkedList.contains()).toEqual(false);
+  });
+
+  it("should return false if head is not null and the node does not contain our passed in value", function(){
+    linkedList.addToTail(1);
+    expect(linkedList.contains(2)).toEqual(false);
+  });
+
 });
