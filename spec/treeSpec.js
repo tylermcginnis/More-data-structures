@@ -31,18 +31,4 @@ describe("tree", function() {
     tree.addChild("first");
     expect(tree.contains("second")).toEqual(false);
   });
-
-
-  // Add more tests here to test the functionality of tree.
-  /*it("should'", function() {
-    expect().to-();
-  });
-
-  it("should'", function() {
-    expect().to-();
-  });
-
-  it("should'", function() {
-    expect().to-();
-  });*/
 });
