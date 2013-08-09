@@ -20,4 +20,10 @@ describe("set", function() {
     set.add({key1: "value1"});
     expect(set.contains("key1")).toEqual(true);
   });
+
+  it("should remove the item from storage is present", function() {
+    set.add({key1: "value1"});
+    set.remove("key1");
+    expect(set.contains("key1")).toEqual(false);
+  });
 });

@@ -19,5 +19,8 @@ setPrototype.contains = function(passedKey){
   return found;
 };
 
-setPrototype.remove = function(){
+setPrototype.remove = function(removeKey){
+  if(this.contains(removeKey)){
+    delete this._storage[removeKey];
+  }
 };
