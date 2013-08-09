@@ -19,7 +19,7 @@ var makeLinkedList = function(){
       if(list.head === null){
         return null;
       }
-      list.tail = null; 
+      list.tail = null;
     }
     var tempHead = list.head.value;
     list.head = list.head.next;
@@ -27,6 +27,9 @@ var makeLinkedList = function(){
   };
 
   list.contains = function(){
+    if(list.head === null){
+      return false;
+    }
   };
 
   return list;
