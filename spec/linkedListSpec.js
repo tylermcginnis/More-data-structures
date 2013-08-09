@@ -24,4 +24,41 @@ describe("linkedList", function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it("should set head when addToTail is first called & head remains the same after a tail is added", function() {
+    linkedList.addToTail(1);
+    expect(linkedList.head.value).toEqual(1);
+    linkedList.addToTail(2);
+    expect(linkedList.head.value).toEqual(1);
+  })
+
+  it("should set head when addToTail is first called & head remains the same after a tail is added", function() {
+    linkedList.addToTail(1);
+    expect(linkedList.head.value).toEqual(1);
+    linkedList.addToTail(2);
+    expect(linkedList.head.value).toEqual(1);
+  });
+
+
+  it("should make head undefined when removeHead is called", function() {
+    linkedList.addToTail(1);
+    linkedList.removeHead();
+    expect(linkedList.head).toEqual(null);
+  });
+
+  it("should remove first node from list and return its value", function() {
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    expect(linkedList.removeHead()).toEqual(1);
+  });
+
+/*
+  it("should set head and tail to null if the object is empty", function() {
+    linkedList.addToTail(1);
+    expect(linkedList.head.value).toEqual(1);
+    linkedList.removeHead();
+    expect(linkedList.head.value).toEqual(null);
+    expect(linkedList.tail.value).toEqual(null);
+  }) */
+
 });
