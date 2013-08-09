@@ -52,13 +52,12 @@ describe("linkedList", function() {
     expect(linkedList.removeHead()).toEqual(1);
   });
 
-/*
-  it("should set head and tail to null if the object is empty", function() {
+
+  it("should set head and tail to null if the object is empty or if only one node exists", function() {
     linkedList.addToTail(1);
-    expect(linkedList.head.value).toEqual(1);
     linkedList.removeHead();
-    expect(linkedList.head.value).toEqual(null);
-    expect(linkedList.tail.value).toEqual(null);
-  }) */
+    expect(linkedList.head).toEqual(null);
+    expect(linkedList.tail).toEqual(null);
+  })
 
 });
