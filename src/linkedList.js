@@ -26,10 +26,22 @@ var makeLinkedList = function(){
     return tempHead;
   };
 
-  list.contains = function(){
+  list.contains = function(val){
     if(list.head === null){
       return false;
     }
+
+    var search = function(node){
+      var result = false;
+      if(node.value === val){
+        result = true;
+      } else if (node.next){
+        result = search(node.next);
+      }
+      return result;
+    };
+
+    return search(list.head);
   };
 
   return list;
