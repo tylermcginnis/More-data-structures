@@ -11,6 +11,11 @@ describe("tree", function() {
     expect('value' in tree).toBe(true);
   });
 
+  it("should add a child when add child is called", function() {
+    tree.addChild("first");
+    expect(tree.children.length).toEqual(1);
+  });
+
   // Add more tests here to test the functionality of tree.
   /*it("should'", function() {
     expect().to-();
