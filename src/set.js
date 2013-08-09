@@ -11,7 +11,12 @@ setPrototype.add = function(obj){
   this._storage[key[0]] = obj[key[0]];
 };
 
-setPrototype.contains = function(){
+setPrototype.contains = function(passedKey){
+  var found = false;
+  _.each(this._storage, function(value, key){
+    if(key === passedKey){found = true;}
+  });
+  return found;
 };
 
 setPrototype.remove = function(){
