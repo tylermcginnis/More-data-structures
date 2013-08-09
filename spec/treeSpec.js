@@ -16,6 +16,17 @@ describe("tree", function() {
     expect(tree.children.length).toEqual(1);
   });
 
+  it("should add a child to another child", function() {
+    tree.addChild("first");
+    tree.children[0].addChild("second");
+    expect(tree.children[0].children.length).toEqual(1);
+  });
+
+  it("should return true if the passed in value exists", function() {
+    tree.addChild("first");
+    expect(tree.contains("first")).toBe(true);
+  });
+
   // Add more tests here to test the functionality of tree.
   /*it("should'", function() {
     expect().to-();
