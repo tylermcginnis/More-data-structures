@@ -114,14 +114,14 @@ describe("linkedList", function() {
     linkedList.addToTail(1);
     var oldHead = linkedList.head;
     linkedList.addToHead(2);
-    expect(linkedList.head.next).not.toBe(oldHead);
+    expect(linkedList.head.next).toBe(oldHead);
   });
 
   it("should update former head's previous property when addToHead method is called", function(){
     linkedList.addToTail(1);
     var oldHead = linkedList.head;
     linkedList.addToHead(2);
-    expect(oldHead.previous).toBe(list.head);
+    expect(oldHead.previous).toBe(linkedList.head);
   });
 
 //removeTail
