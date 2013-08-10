@@ -16,14 +16,10 @@ var makeLinkedList = function(){
   };
 
   list.removeHead = function(){
-    if(list.head === list.tail){
-      if(list.head === null){
-        return null;
-      }
-      list.tail = null;
-    }
+    tailEqualsHead();
     var tempHead = list.head.value;
     list.head = list.head.next;
+    list.head && (list.head.previous = null);
     return tempHead;
   };
 
@@ -43,6 +39,23 @@ var makeLinkedList = function(){
     };
 
     return search(list.head);
+  };
+
+  //for doubly linked list
+
+  list.removeTail = function(){
+    tailEqualsHead();
+    list.tail = list.tail.previous;
+    list.tail.next = null;
+  };
+
+  var tailEqualsHead = function(){
+    if(list.head === list.tail){
+      if(list.head === null){
+        return null;
+      }
+      list.tail = null;
+    }
   };
 
   return list;
