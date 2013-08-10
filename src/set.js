@@ -14,13 +14,11 @@ setPrototype.add = function(obj){
 setPrototype.contains = function(passedKey){
   var found = false;
   _.each(this._storage, function(value, key){
-    if(key === passedKey){found = true;}
+    key === passedKey && (found = true);
   });
   return found;
 };
 
 setPrototype.remove = function(removeKey){
-  if(this.contains(removeKey)){
-    delete this._storage[removeKey];
-  }
+  this.contains(removeKey) && delete this._storage[removeKey];
 };
