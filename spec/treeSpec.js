@@ -31,4 +31,10 @@ describe("tree", function() {
     tree.addChild("first");
     expect(tree.contains("second")).toEqual(false);
   });
+
+  //parent links tests
+  it("should set parent property when addChild is called", function(){
+    tree.addChild('first');
+    expect(tree.children[0].parent).toBe(tree);
+  });
 });
