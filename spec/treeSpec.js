@@ -36,5 +36,18 @@ describe("tree", function() {
   it("should set parent property when addChild is called", function(){
     tree.addChild('first');
     expect(tree.children[0].parent).toBe(tree);
+    tree.addChild('second');
+    expect(tree.children[1].parent).toBe(tree);
+    tree.children[0].addChild('first\'s first');
+    expect(tree.children[0].children[0].parent).toBe(tree.children[0]);
   });
+
+  //removeFromParent tests
+
+  it('should disassociate the parent and child from each other when the child calls removeFromParent', function(){
+    tree.addChild('first');
+    tree.removeFromParent(0);
+    expect(tree.children).toEqual([]);
+  });
+
 });

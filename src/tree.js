@@ -24,5 +24,12 @@ treeMethods.contains = function(val){
       found = true;
     }
   });
+
+treeMethods.removeFromParent = function(i){
+    this.children[i].parent = null;
+    this.children.splice(i,1);
+  };
+
   return found;
 };
+
