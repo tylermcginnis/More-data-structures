@@ -49,6 +49,13 @@ var makeLinkedList = function(){
     list.tail.next = null;
   };
 
+  list.addToHead = function(val){
+    var temp = list.head;
+    list.head = makeNode(val);
+    list.head.next = temp;
+    temp.previous = list.head;
+  };
+
   var tailEqualsHead = function(){
     if(list.head === list.tail){
       if(list.head === null){
