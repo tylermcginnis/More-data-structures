@@ -15,13 +15,26 @@ var HashTable = function(){
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
   console.log(i);
-  this._storage.set(i, v);
+  var values = this._storage.get(i) || [];
+  values.push([k,v]);
+  this._storage.set(i, values);
 };
 
 HashTable.prototype.retrieve = function(k){
+  var value;
   var i = getIndexBelowMaxForKey(k, this._limit);
-  return this._storage.get(i);
-};
+  var elements = this._storage.get(i); //this is our problem
+  console.log(elements);
+  _.each(elements, function(el){
+    if(el[0] === k){
+      value = el[1];
+    }
+  });
+
+  return value;
+};/*elements = an array of arrays
+not sure about test, need to get value from an array in elements
+*/
 
 HashTable.prototype.remove = function(){
 };
