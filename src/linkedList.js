@@ -9,6 +9,7 @@ var makeLinkedList = function(){
     list.tail = makeNode(val);
     if(temp){
       temp.next = list.tail;
+      list.tail.previous = temp;
     } else {
       list.head = list.tail;
     }
