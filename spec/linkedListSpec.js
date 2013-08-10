@@ -96,4 +96,47 @@ describe("linkedList", function() {
     expect(linkedList.tail.previous).toBe(oldTail);
   });
 
+  it("should update the new heads previous property when we call removeHead", function(){
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.removeHead();
+    expect(linkedList.head.previous).toEqual(null);
+  });
+//addToHead
+  it("should move head to new node when addToHead method is called", function(){
+    linkedList.addToTail(1);
+    var oldHead = linkedList.head;
+    linkedList.addToHead(2);
+    expect(linkedList.head).not.toBe(oldHead);
+  });
+
+  it("should set head's next property when addToHead is called", function(){
+    linkedList.addToTail(1);
+    var oldHead = linkedList.head;
+    linkedList.addToHead(2);
+    expect(linkedList.head.next).not.toBe(oldHead);
+  });
+
+  it("should update former head's previous property when addToHead method is called", function(){
+    linkedList.addToTail(1);
+    var oldHead = linkedList.head;
+    linkedList.addToHead(2);
+    expect(oldHead.previous).toBe(list.head);
+  });
+
+//removeTail
+  it("should move tail when removeTail is called", function(){
+    linkedList.addToTail(1);
+    var formerTail = linkedList.tail;
+    linkedList.addToTail(2);
+    linkedList.removeTail();
+    expect(linkedList.tail).toBe(formerTail);
+  });
+
+  it("should update tail's next propery when removeTail is called", function(){
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.removeTail();
+    expect(linkedList.tail.next).toEqual(null);
+  });
 });
