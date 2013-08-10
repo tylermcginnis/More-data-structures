@@ -27,7 +27,6 @@ var makeLinkedList = function(){
     if(list.head === null){
       return false;
     }
-
     var search = function(node){
       var result = false;
       if(node.value === val){
@@ -57,12 +56,7 @@ var makeLinkedList = function(){
   };
 
   var tailEqualsHead = function(){
-    if(list.head === list.tail){
-      if(list.head === null){
-        return null;
-      }
-      list.tail = null;
-    }
+    list.head === list.tail && (list.tail = null);
   };
 
   return list;
