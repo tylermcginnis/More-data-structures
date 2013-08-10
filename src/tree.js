@@ -20,9 +20,7 @@ treeMethods.addChild = function(val){
 treeMethods.contains = function(val){
   var found = false;
   _.each(this.children, function(child){
-    if(child.value === val){
-      found = true;
-    }
+    child.value === val && (found = true);
   });
 
 treeMethods.removeFromParent = function(i){
