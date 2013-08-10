@@ -88,5 +88,12 @@ describe("linkedList", function() {
     expect(linkedList.contains(4)).toEqual(false);
   });
 
+    it("should tails PREVIOUS property whenever the addToTail function is called", function(){
+    linkedList.addToTail(1);
+    expect(linkedList.tail.previous).toEqual(null);
+    var oldTail = linkedList.tail;
+    linkedList.addToTail(2);
+    expect(linkedList.tail.previous).toBe(oldTail);
+  });
 
 });
