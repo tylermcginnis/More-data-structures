@@ -24,20 +24,13 @@ var makeLinkedList = function(){
   };
 
   list.contains = function(val){
-    if(list.head === null){
-      return false;
+    var result;
+    if(list.head){
+       result = list.head.contains(val);
+    } else {
+      result = false;
     }
-    var search = function(node){
-      var result = false;
-      if(node.value === val){
-        result = true;
-      } else if (node.next){
-        result = search(node.next);
-      }
-      return result;
-    };
-
-    return search(list.head);
+    return result;
   };
 
   //for doubly linked list
@@ -67,6 +60,18 @@ var makeNode = function(value){
   node.value = value;
   node.next = null;
   node.previous = null;
+
+  node.contains = function(val){
+    var result;
+    if (this.value === val){
+      result = true
+    } else if (this.next) {
+      result = this.next.contains(val);
+    } else {
+      result = false;
+    }
+    return result
+  };
 
   return node;
 };
